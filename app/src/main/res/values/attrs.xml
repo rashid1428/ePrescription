@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="formHint" format="string" />
+
+    <declare-styleable name="FormEditText">
+        <attr name="formHint" />
+        <attr name="android:inputType" />
+    </declare-styleable>
+
+    <declare-styleable name="FormDropDownItem">
+        <attr name="formHint" />
+    </declare-styleable>
+
+    <declare-styleable name="MultiStateToggleButton">
+        <attr name="values" format="reference" />
+        <attr name="mstbPrimaryColor" format="reference" />
+        <attr name="mstbSecondaryColor" format="reference" />
+        <attr name="mstbColorPressedText" format="reference" />
+        <attr name="mstbColorPressedBackground" format="reference" />
+        <attr name="mstbColorPressedBackgroundResource" format="reference" />
+        <attr name="mstbColorNotPressedText" format="reference" />
+        <attr name="mstbColorNotPressedBackground" format="reference" />
+        <attr name="mstbColorNotPressedBackgroundResource" format="reference" />
+    </declare-styleable>
+
+</resources>

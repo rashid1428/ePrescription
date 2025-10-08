@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#6C6868</color>
+    <color name="greyLight">#D3D3D3</color>
+    <color name="red">#D95547</color>
+    <color name="search_bg">#E5E6E9</color>
+    <color name="search_hint">#A6A7A9</color>
+    <color name="blue">#3983DC</color>
+    <color name="card_bg">#E8F0F9</color>
+
+    <color name="colorPrimary">#DE3535</color>
+    <color name="colorPrimaryDark">#DE3535</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <!--    <color name="colorAccent">#DE3535</color>-->
+
+    <!--app colors-->
+    <color name="colorChatIncomingTime">#95989A</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorViewUnderProgress">#E9E9E9</color>
+    <color name="colorWineText">#DE3535</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlackOpacity50">#4C000000</color>
+    <color name="colorWaterBlue">#3399FF</color>
+    <color name="colorBlueDark">#006FDD</color>
+    <color name="colorBackLayoutBg">#F8F8F8</color>
+    <color name="colorBackF8F8F8">#F8F8F8</color>
+    <color name="colorPasswordDetail">#9E9E9E</color>
+    <color name="colorSideDrawerViewsBG">#EAEAEA</color>
+    <color name="colorGrayText8080">#808080</color>
+    <color name="colorGrayTextE5E6EA">#E5E6EA</color>
+    <color name="colorGrey4DE5E6EA">#4DE5E6EA</color>
+    <color name="colorGray919191">#919191</color>
+    <color name="colorGray707070">#707070</color>
+    <color name="colorSwitchOn">#4CD964</color>
+    <color name="colorAppointmentsDarkGray">#6A6A6A</color>
+    <color name="colorBlue">#006fDD</color>
+    <color name="color_light_grey_alpha_45">#73808080</color>
+    <color name="color_light_grey">#808080</color>
+    <color name="colorChatETBorder">#CDCED2</color>
+    <color name="colorSearchDoc">#E5E6EA</color>
+    <color name="colorViewGray">#80E5E6EA</color>
+    <color name="colorGreenCalendarSelect">#00B200</color>
+    <color name="colorGrayView">#3F3F3F</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorView">#707070</color>
+    <color name="black20">#33000000</color>
+
+    <color name="colorGray00000029">#15000029</color>
+
+    <color name="colorLoginOpacity65">#A5FFFFFF</color>
+    <color name="colorBlack090808">#090808</color>
+
+    <color name="colorBlack60">#99000000</color>
+    <color name="colorBlack96">#F5000000</color>
+    <color name="colorYellow">#FFBB00</color>
+    <color name="colorGreen">#164A0A</color>
+
+    <color name="button_primary_color">#3F51B5</color>
+    <color name="button_secondary_color">#FFFFFF</color>
+
+</resources>

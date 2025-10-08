@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--inner container-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_155sdp"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:gravity="center"
+                android:weightSum="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!--app:wheel_indicator_helper_size="@dimen/_2sdp"-->
+                <com.aigestudio.wheelpicker.WheelPicker
+                    android:id="@+id/monthWheel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_155sdp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    app:wheel_atmospheric="true"
+                    app:wheel_curved="true"
+                    app:wheel_cyclic="true"
+                    app:wheel_data="@array/WheelArrayDefault"
+                    app:wheel_indicator="true"
+                    app:wheel_indicator_color="@color/colorViewGray"
+                    app:wheel_indicator_size="@dimen/_2sdp"
+                    app:wheel_item_align="right"
+                    app:wheel_item_text_color="#C3C1C1"
+                    app:wheel_item_text_size="@dimen/_15ssp"
+                    app:wheel_selected_item_text_color="@color/black"
+                    app:wheel_visible_item_count="8" />
+
+                <com.aigestudio.wheelpicker.WheelPicker
+                    android:id="@+id/dayWheel"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_155sdp"
+                    android:layout_weight="0.4"
+                    app:wheel_atmospheric="true"
+                    app:wheel_curved="true"
+                    app:wheel_cyclic="true"
+                    app:wheel_data="@array/WheelArrayDay"
+                    app:wheel_indicator="true"
+                    app:wheel_indicator_color="@color/colorViewGray"
+                    app:wheel_indicator_size="@dimen/_2sdp"
+                    app:wheel_item_align="center"
+                    app:wheel_item_text_color="#C3C1C1"
+                    app:wheel_item_text_size="@dimen/_15ssp"
+                    app:wheel_selected_item_text_color="@color/black"
+                    app:wheel_visible_item_count="8" />
+
+                <com.aigestudio.wheelpicker.WheelPicker
+                    android:id="@+id/yearWheel"
+                    android:layout_width="@dimen/_47sdp"
+                    android:layout_height="@dimen/_155sdp"
+                    android:layout_weight="0.6"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    app:wheel_atmospheric="true"
+                    app:wheel_curved="true"
+                    app:wheel_cyclic="true"
+                    app:wheel_data="@array/WheelArrayYear"
+                    app:wheel_indicator="true"
+                    app:wheel_indicator_color="@color/colorViewGray"
+                    app:wheel_indicator_size="@dimen/_2sdp"
+                    app:wheel_item_align="left"
+                    app:wheel_item_text_color="#C3C1C1"
+                    app:wheel_item_text_size="@dimen/_15ssp"
+                    app:wheel_selected_item_text_color="@color/black"
+                    app:wheel_visible_item_count="8" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_32sdp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/colorViewGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                <TextView
+                    android:id="@+id/cancelButton"
+                    android:layout_width="@dimen/_85sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    style="@style/MediumFontStyle"
+                    android:text="@string/cancel_txt"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/colorWineText"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginEnd="@dimen/_1sdp"/>
+
+                <TextView
+                    android:id="@+id/doneButton"
+                    android:layout_width="@dimen/_85sdp"
+                    android:layout_height="@dimen/_32sdp"
+                    style="@style/MediumFontStyle"
+                    android:text="@string/done_txt"
+                    android:textSize="@dimen/_13ssp"
+                    android:textColor="@color/colorWineText"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginStart="@dimen/_1sdp"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout><!--inner container-->
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

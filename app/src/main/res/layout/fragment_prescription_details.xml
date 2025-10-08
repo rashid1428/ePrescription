@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.doctor.eprescription.features.homescreen.prescription.details.PrescriptionDetailFragment">
+
+    <include
+        android:id="@+id/backer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        layout="@layout/comp_back_button" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/llButtons"
+        app:layout_constraintTop_toBottomOf="@id/backer">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:padding="@dimen/_20sdp"
+            android:animateLayoutChanges="true">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvPatient"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:translationZ="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_40sdp"
+                app:layout_constraintBottom_toTopOf="@id/cvPatientDetails"
+                app:layout_constraintEnd_toEndOf="@id/cvPatientDetails"
+                app:layout_constraintStart_toStartOf="@id/cvPatientDetails"
+                app:layout_constraintTop_toTopOf="@id/cvPatientDetails">
+
+                <ImageView
+                    android:id="@+id/ivPatient"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/doct_bg" />
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvPatientDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30sdp"
+                app:cardElevation="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:padding="@dimen/_12sdp">
+
+                    <TextView
+                        android:id="@+id/tvPatient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                       style="@style/TextView.Blue.Bold.12"
+                        android:text="Patient"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivExpandPatientDetails"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:background="@drawable/ring_background"
+                        android:src="@drawable/ic_arrow_up"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/blue" />
+
+                    <LinearLayout
+                        android:id="@+id/llPatientInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/form_top_margin"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@id/tvPatient">
+
+                        <TextView
+                            android:id="@+id/tvPatientName"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name:" />
+
+                        <TextView
+                            android:id="@+id/tvPatientGender"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gender:" />
+
+                        <TextView
+                            android:id="@+id/tvPatientDOB"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Date of Birth:" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llPatientMoreInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@id/llPatientInfo">
+
+                        <TextView
+                            android:id="@+id/tvPatientAddress"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Address:" />
+
+                        <TextView
+                            android:id="@+id/tvPatientCity"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="City:" />
+
+                        <TextView
+                            android:id="@+id/tvPatientState"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="State:" />
+
+                        <TextView
+                            android:id="@+id/tvPatientZip"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ZipCode:" />
+
+                        <TextView
+                            android:id="@+id/tvPatientPhoneNo"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Phone No:" />
+
+                        <TextView
+                            android:id="@+id/tvPatientHeight"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Height:" />
+
+                        <TextView
+                            android:id="@+id/tvPatientWeight"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Weight:" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/btnEditPatient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/edit"
+                        android:textColor="@color/blue"
+                        style="@style/TextView.Blue.Bold.12"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:drawablePadding="@dimen/_5sdp"
+                        app:drawableStartCompat="@drawable/edit" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvPrescriberDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/cvPatientDetails">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_12sdp">
+
+                    <TextView
+                        android:id="@+id/tvPrescriber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/TextView.Blue.Bold.12"
+                        android:text="Prescriber"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivExpandPrescriber"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:visibility="gone"
+                        android:background="@drawable/ring_background"
+                        android:src="@drawable/ic_arrow_up"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/blue" />
+
+                    <LinearLayout
+                        android:id="@+id/llPrescriberInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/form_top_margin"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@id/tvPrescriber">
+
+                        <TextView
+                            android:id="@+id/tvPrescriberName"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name:" />
+
+                        <TextView
+                            android:id="@+id/tv_prescriber_gender"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gender:" />
+
+                        <TextView
+                            android:id="@+id/tv_prescriber_dob"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DOB:" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvPharmacyDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/card_bg"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/cvPrescriberDetails">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_12sdp">
+
+                    <TextView
+                        android:id="@+id/tvPharmacy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/TextView.Blue.Bold.12"
+                        android:text="Pharmacy"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivExpandPharmacy"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:visibility="gone"
+                        android:background="@drawable/ring_background"
+                        android:src="@drawable/ic_arrow_up"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/blue" />
+
+                    <LinearLayout
+                        android:id="@+id/llPharmacyInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/form_top_margin"
+                        android:orientation="vertical"
+                        app:layout_constraintTop_toBottomOf="@id/tvPharmacy">
+
+                        <TextView
+                            android:id="@+id/tvPharmacyName"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name:" />
+
+                        <TextView
+                            android:id="@+id/tvPharmacyAddress"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Address:" />
+
+                        <TextView
+                            android:id="@+id/tvPharmacyCity"
+                            style="@style/TextView.Grey.Regular.12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="City:" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/btnEditPharmacy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/edit"
+                        android:textColor="@color/blue"
+                        style="@style/TextView.Blue.Bold.12"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:drawablePadding="@dimen/_5sdp"
+                        app:drawableStartCompat="@drawable/edit" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvSelectedMedicines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextView.Blue.Bold.12"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:text="Selected Medicines"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvPharmacyDetails" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSelectedMedicines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                tools:listitem="@layout/item_selected_medicine"
+                tools:itemCount="1"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectedMedicines"/>
+
+            <LinearLayout
+                android:id="@+id/llControlSubstance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_15sdp"
+                app:layout_constraintTop_toBottomOf="@id/rvSelectedMedicines"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/token_device"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"/>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/rectangle_round_black_4dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:background="@color/colorTransparent"
+                            />
+
+                        <ImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="@dimen/_5sdp"
+                            android:src="@drawable/right_arrow"
+                            app:tint="@color/black" />
+
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/signing_passphrase"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"/>
+
+                    <EditText
+                        android:id="@+id/etSigningPhrase"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:background="@drawable/rectangle_round_black_4dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/token_pin"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"/>
+
+                    <EditText
+                        android:id="@+id/etTokenPin"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rectangle_round_black_4dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAddMore"
+            style="@style/SemiBoldStyleForButtons"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/_5ssp"
+            android:background="@drawable/red_button_bg"
+            android:text="@string/add_medicine" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSend"
+            style="@style/SemiBoldStyleForButtons"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_weight="1"
+            android:background="@drawable/red_button_bg"
+            android:text="@string/send" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

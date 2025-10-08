@@ -1,0 +1,75 @@
+
+<resources>
+    <string name="app_name">e-prescription</string>
+
+    <string name="cancel_txt">CANCEL</string>
+    <string name="done_txt">DONE</string>
+    <string name="next">Next</string>
+
+    <string name="cant_find_a_doctor">Can\'t find your doctor? Invite now</string>
+    <string name="search_txt">Search</string>
+    <string name="nothing_found_please_try_again_txt">Nothing Found</string>
+    <string name="please_try_again_txt">Please Try Again</string>
+    <string name="add_patient">Add Patient</string>
+    <string name="prescribe">Prescribe</string>
+    <string name="frequency">Frequency</string>
+    <string name="route">Route</string>
+    <string name="free_text">Free Text</string>
+    <string name="medicine">Medicine</string>
+    <string name="dose_quantity_unit">Dose Quantity Unit</string>
+    <string name="dose_quantity">Dose Quantity</string>
+    <string name="add_more">Add More</string>
+    <string name="refill">Refill</string>
+    <string name="refill_colon">Refill:</string>
+    <string name="special_instructions_for_pharmacy">Special Instructions for Pharmacy</string>
+    <string name="add_to_my_template">Add to My Template</string>
+    <string name="may_substitute">May Substitute</string>
+    <string name="compounding">Compounding</string>
+    <string name="medical_supply">Medical Supply</string>
+    <string name="pharmacy_txt">Pharmacy</string>
+    <string name="food_and_drug_allergies_txt">Food &amp; Drug Allergies</string>
+    <string name="name_txt">Name:</string>
+    <string name="specialty_txt">Specialty:</string>
+    <string name="address_txt">Address:</string>
+    <string name="city_txt">City:</string>
+    <string name="state_txt">State:</string>
+    <string name="zipcode_txt">ZipCode:</string>
+    <string name="sig">Sig</string>
+    <string name="sig_colon">Sig:</string>
+    <string name="dispense">Dispense</string>
+    <string name="dispense_forms">Dispense Forms</string>
+    <string name="quantity">Quantity</string>
+    <string name="quantity_colon">Quantity:</string>
+    <string name="diagnosis">Diagnosis</string>
+    <string name="quantity_unit">Quantity Unit</string>
+    <string name="title">Title</string>
+    <string name="save">Save</string>
+    <string name="skip">Skip</string>
+    <string name="total_quantity">Total Quantity</string>
+    <string name="total_quantity_unit">Total Quantity Unit</string>
+    <string name="my_templates">My Templates</string>
+    <string name="meftii_templates">Meftii Templates</string>
+    <string name="home_meds_txt">Home Meds</string>
+    <string name="colon">: </string>
+    <string name="add_patient_txt">ADD PATIENT</string>
+    <string name="send">Send</string>
+    <string name="center">center</string>
+    <string name="left">left</string>
+    <string name="right">right</string>
+    <string name="erx_status">erx Status</string>
+    <string name="erx_history">erx History</string>
+    <string name="search_by_name_or_dob_txt">Search by Name or DOB</string>
+    <string name="profile_txt">Profile</string>
+    <string name="add_medicine">Add Medicine</string>
+    <string name="edit">Edit</string>
+
+    <string name="error_title">Error</string>
+    <string name="error_message">An Error occurred</string>
+    <string name="error_retry">Retry</string>
+    <string name="error_cancel">Cancel</string>
+    <string name="token_device">Token Device</string>
+    <string name="signing_passphrase">Signing Passphrase</string>
+    <string name="token_pin">Token Pin</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+</resources>

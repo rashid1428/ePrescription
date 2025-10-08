@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/_24sdp"
+    tools:context="com.doctor.eprescription.features.homescreen.patientmenu.PatientMenuFragment"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/backer"
+        layout="@layout/comp_back_button"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvImage"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_70sdp"
+        app:cardCornerRadius="@dimen/_40sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/ivPatient"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/doct_bg" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvPatientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Persues Abindgon"
+        style="@style/RegularFontStyle"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@id/cvImage"
+        app:layout_constraintStart_toStartOf="@id/cvImage"
+        app:layout_constraintEnd_toEndOf="@id/cvImage"/>
+
+    <TextView
+        android:id="@+id/tvPatientDOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="DOB: 2012-09-01"
+        style="@style/RegularFontStyle"
+        android:textSize="@dimen/_12sdp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/tvPatientName"
+        app:layout_constraintStart_toStartOf="@id/cvImage"
+        app:layout_constraintEnd_toEndOf="@id/cvImage"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMenu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPatientDOB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="@dimen/_12sdp"
+        tools:itemCount="6"
+        tools:listitem="@layout/item_patient_menu"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

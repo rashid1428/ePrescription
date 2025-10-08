@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_20sdp"
+    tools:context="com.doctor.eprescription.features.homescreen.pharmacylist.PharmacyListFragment">
+
+    <include
+        android:id="@+id/compBackButton"
+        layout="@layout/comp_back_button" />
+
+    <TextView
+        android:id="@+id/doneButton"
+        style="@style/BoldFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_19sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:text="@string/done_txt"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWaterBlue"
+        android:textSize="@dimen/_13ssp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/compBackButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/compBackButton"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/BoldFontStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_19sdp"
+        android:text="@string/pharmacy_txt"
+        android:textAllCaps="false"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_24ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compBackButton" />
+
+    <LinearLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/rectangle_greylight_5dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tabExpanded"
+            style="@style/TabButtonStyle"
+            android:text="Expanded" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tabRetail"
+            style="@style/TabButtonStyle"
+            android:text="Retail" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tabMailOrder"
+            style="@style/TabButtonStyle"
+            android:text="Mail Order" />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/compSearch"
+        layout="@layout/comp_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPharmacy"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/compSearch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_pharmacy_list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

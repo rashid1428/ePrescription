@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/clMedicine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/ivMenu"
+        app:layout_constraintEnd_toStartOf="@+id/cbSelected"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivMenu">
+
+        <TextView
+            android:id="@+id/tvMedicineName"
+            style="@style/MediumFontStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="asld;kf asldf aslkjdfalksdf" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llSig"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/tvMedicineName"
+            app:layout_constraintStart_toStartOf="@id/tvMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/tvMedicineName">
+
+            <TextView
+                android:id="@+id/tvSigTitle"
+                style="@style/RegularFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sig_colon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvSig" />
+
+            <TextView
+                android:id="@+id/tvSig"
+                style="@style/RegularFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvSigTitle"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="lkasdflkasdjf as;lfkj asldkjf laskdjfalkskndfa;slk jdfas;lkdnflaks dfalksd f1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/llDoseQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/tvMedicineName"
+            app:layout_constraintStart_toStartOf="@id/tvMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/tvMedicineName">
+
+            <TextView
+                style="@style/RegularFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dose_quantity" />
+
+            <TextView
+                android:id="@+id/tvDoseQuantity"
+                style="@style/RegularFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                tools:text="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llDoseUnit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/tvMedicineName"
+            app:layout_constraintStart_toStartOf="@id/tvMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/llDoseQuantity">
+
+            <TextView
+                style="@style/RegularFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/dose_quantity_unit" />
+
+            <TextView
+                android:id="@+id/tvDoseUnit"
+                style="@style/RegularFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                tools:text="Cap(s)" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llRoute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/tvMedicineName"
+            app:layout_constraintStart_toStartOf="@id/tvMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/llDoseUnit">
+
+            <TextView
+                style="@style/RegularFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/route" />
+
+            <TextView
+                android:id="@+id/tvRoute"
+                style="@style/RegularFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                tools:text="Rectally" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFrequency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/tvMedicineName"
+            app:layout_constraintStart_toStartOf="@id/tvMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/llRoute">
+
+            <TextView
+                style="@style/RegularFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/frequency" />
+
+            <TextView
+                android:id="@+id/tvFrequency"
+                style="@style/RegularFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                tools:text="2 Times Daily" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llTotalQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/tvMedicineName"
+            app:layout_constraintStart_toStartOf="@id/tvMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/llFrequency">
+
+            <TextView
+                style="@style/RegularFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/total_quantity" />
+
+            <TextView
+                android:id="@+id/tvTotalQuantity"
+                style="@style/RegularFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                tools:text="10" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llTotalQuantityUnit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@id/tvMedicineName"
+            app:layout_constraintStart_toStartOf="@id/tvMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/llSig">
+
+            <TextView
+                android:id="@+id/tvQuantityTitle"
+                style="@style/RegularFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/quantity_colon"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTotalQuantityUnit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvTotalQuantityUnit" />
+
+            <TextView
+                android:id="@+id/tvTotalQuantityUnit"
+                style="@style/RegularFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvQuantityTitle"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="10" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/llRefill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/tvMedicineName"
+            app:layout_constraintStart_toStartOf="@id/tvMedicineName"
+            app:layout_constraintTop_toBottomOf="@id/llTotalQuantityUnit">
+
+            <TextView
+                android:id="@+id/tvRefillTitle"
+                style="@style/RegularFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/refill_colon"
+                app:layout_constraintBottom_toBottomOf="@+id/tvRefill"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvRefill" />
+
+            <TextView
+                android:id="@+id/tvRefill"
+                style="@style/RegularFontStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:gravity="end"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvRefillTitle"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="10" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/cbSelected"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:src="@drawable/ic_tick_blue"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivMenu"
+        app:layout_constraintStart_toEndOf="@id/clMedicine"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/more_options"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnEdit"
+            android:layout_width="@dimen/_34sdp"
+            android:layout_height="@dimen/_34sdp"
+            android:background="@color/blue"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_edit" />
+
+        <ImageView
+            android:id="@+id/btnDelete"
+            android:layout_width="@dimen/_34sdp"
+            android:layout_height="@dimen/_34sdp"
+            android:background="@color/red"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/baseline_delete_24"
+            app:tint="@color/white" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/clMedicine" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

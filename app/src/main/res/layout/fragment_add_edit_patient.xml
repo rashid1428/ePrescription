@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/_24sdp"
+    android:background="@color/white"
+    tools:context="com.doctor.eprescription.features.homescreen.addeditpatient.AddEditPatientFragment">
+
+    <include
+        android:id="@+id/compBackButton"
+        layout="@layout/comp_back_button"
+        />
+
+    <TextView
+        style="@style/BoldFontStyle"
+        android:id="@+id/doneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_patient"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWaterBlue"
+        android:textSize="@dimen/_13ssp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/compBackButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/compBackButton" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Patient"
+        android:layout_marginTop="@dimen/_16sdp"
+        style="@style/TextView.SanSerif.20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/compBackButton" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="@dimen/_12sdp"
+        android:scrollbarSize="0dp"
+        app:layout_constraintBottom_toTopOf="@id/btnUpdate"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.doctor.eprescription.customviews.FormEditText
+                android:id="@+id/fetFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:animateLayoutChanges="true"
+                android:inputType="textPersonName"
+                app:formHint="First Name"/>
+
+            <com.doctor.eprescription.customviews.FormEditText
+                android:id="@+id/fetLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:animateLayoutChanges="true"
+                android:inputType="textPersonName"
+                app:formHint="Last Name"/>
+
+            <com.doctor.eprescription.customviews.FormEditText
+                android:id="@+id/ddPharmacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                app:formHint="Pharmacy"/>
+
+            <com.doctor.eprescription.customviews.FormEditText
+                android:id="@+id/fetEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:animateLayoutChanges="true"
+                android:inputType="textEmailAddress"
+                app:formHint="Email"/>
+
+            <TextView
+                android:id="@+id/tvDoctorType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:text="Gender"
+                android:fontFamily="@font/montserrat_regular"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/grey"/>
+
+            <LinearLayout
+                android:id="@+id/llGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tvDoctorType">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnMale"
+                    style="@style/SelectableButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Male"/>
+
+                <Space
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_1sdp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnFemale"
+                    style="@style/SelectableButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvGenderError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="end"
+                android:layout_gravity="end"
+                android:text="Gender is Mandatory"
+                android:textColor="@color/colorWineText"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line"
+                tools:visibility="visible" />
+
+            <com.doctor.eprescription.customviews.FormEditText
+                android:id="@+id/ddDateOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                app:formHint="Date of Birth"/>
+
+            <com.doctor.eprescription.customviews.FormEditText
+                android:id="@+id/fetPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:animateLayoutChanges="true"
+                android:inputType="phone"
+                app:formHint="Phone"/>
+
+            <com.doctor.eprescription.customviews.FormEditText
+                android:id="@+id/fetStreet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:animateLayoutChanges="true"
+                android:inputType="textPostalAddress"
+                app:formHint="Street"/>
+
+            <com.doctor.eprescription.customviews.FormEditText
+                android:id="@+id/fetCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:animateLayoutChanges="true"
+                android:inputType="textCapWords"
+                app:formHint="City"/>
+
+            <com.doctor.eprescription.customviews.FormEditText
+                android:id="@+id/fetState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:animateLayoutChanges="true"
+                android:inputType="textCapWords"
+                app:formHint="State"/>
+
+            <com.doctor.eprescription.customviews.FormEditText
+                android:id="@+id/fetZipCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:animateLayoutChanges="true"
+                android:inputType="number"
+                app:formHint="Zip Code"/>
+
+            <com.doctor.eprescription.customviews.FormEditText
+                android:id="@+id/fetWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:animateLayoutChanges="true"
+                android:inputType="numberDecimal"
+                app:formHint="Weight"/>
+
+            <com.doctor.eprescription.customviews.FormEditText
+                android:id="@+id/fetWeightUnit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:animateLayoutChanges="true"
+                android:inputType="text"
+                app:formHint="Weight Unit"/>
+
+            <com.doctor.eprescription.customviews.FormEditText
+                android:id="@+id/fetHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:animateLayoutChanges="true"
+                android:inputType="numberDecimal"
+                app:formHint="Height"/>
+
+            <com.doctor.eprescription.customviews.FormEditText
+                android:id="@+id/fetHeightUnit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:animateLayoutChanges="true"
+                android:inputType="text"
+                app:formHint="Height Unit"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SemiBoldStyleForButtons"
+        android:background="@drawable/red_button_bg"
+        android:text="@string/next"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

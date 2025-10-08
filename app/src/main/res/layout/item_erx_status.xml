@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tvNewErx"
+        style="@style/BoldFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="NewErx"
+        android:textColor="@color/blue" />
+
+    <LinearLayout
+        android:id="@+id/llDrugName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/_8sdp">
+
+        <TextView
+            android:id="@+id/tvDrugName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Drug Name"
+            android:fontFamily="@font/montserrat_semibold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tvDrugNameValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            tools:text="Augmentine"
+            android:fontFamily="@font/montserrat_semibold"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/compPrescriber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        layout="@layout/comp_erx_row"/>
+
+    <include
+        android:id="@+id/compPharmacy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        layout="@layout/comp_erx_row"/>
+
+    <include
+        android:id="@+id/compSig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        layout="@layout/comp_erx_row"/>
+
+    <include
+        android:id="@+id/compDispense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        layout="@layout/comp_erx_row"/>
+
+    <include
+        android:id="@+id/compRefill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        layout="@layout/comp_erx_row"/>
+
+    <include
+        android:id="@+id/compDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        layout="@layout/comp_erx_row"/>
+
+    <TextView
+        android:id="@+id/tvNewErxStatus"
+        style="@style/BoldFontStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_gravity="center_horizontal"
+        android:text="NewErx successfully sent to pharmcy"
+        android:textColor="@color/blue" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@color/black"/>
+
+</LinearLayout>

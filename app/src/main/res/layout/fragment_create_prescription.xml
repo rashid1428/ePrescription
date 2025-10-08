@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_16sdp"
+    tools:context="com.doctor.eprescription.features.homescreen.prescription.createprescription.CreatePrescriptionFragment">
+
+    <include
+        android:id="@+id/compBackButton"
+        layout="@layout/comp_back_button" />
+
+    <TextView
+        android:id="@+id/tvSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skip"
+        style="@style/BoldFontStyle"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/compBackButton"
+        app:layout_constraintBottom_toBottomOf="@id/compBackButton"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/BoldFontStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_19sdp"
+        android:textAllCaps="false"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_26ssp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compBackButton"
+        tools:text="Title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbarSize="0dp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@id/llButtons"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clPrescribe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_round_8_stroke_greylight"
+                android:paddingBottom="@dimen/_8sdp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glStartPres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glEndPres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_8sdp" />
+
+                <TextView
+                    android:id="@+id/tvPrescribe"
+                    style="@style/TextView.CardHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/prescribe"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="@id/glEndPres"
+                    app:layout_constraintStart_toStartOf="@id/glStartPres"
+                    app:layout_constraintTop_toBottomOf="@id/tvPrescribe">
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cbCompounding"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/compounding"
+                        android:textColor="@color/black" />
+
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cbMedicalSupply"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/medical_supply"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/swFreeText"
+                    style="@style/CustomSwitchStyle"
+                    android:text="@string/free_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@id/glEndPres"
+                    app:layout_constraintStart_toStartOf="@id/glStartPres"
+                    app:layout_constraintTop_toBottomOf="@id/radioGroup" />
+
+                <com.doctor.eprescription.customviews.FormEditText
+                    android:id="@+id/fetMedicines"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    app:formHint="@string/medicine"
+                    app:layout_constraintEnd_toEndOf="@id/glEndPres"
+                    app:layout_constraintStart_toStartOf="@id/glStartPres"
+                    app:layout_constraintTop_toBottomOf="@id/swFreeText" />
+
+                <LinearLayout
+                    android:id="@+id/llCompounding"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/swFreeText"
+                    app:layout_constraintStart_toStartOf="@id/glStartPres"
+                    app:layout_constraintEnd_toEndOf="@id/glEndPres">
+
+                    <com.doctor.eprescription.customviews.FormEditText
+                        android:id="@+id/fetCompoundingTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        app:formHint="@string/title"
+                        app:layout_constraintEnd_toEndOf="@id/glEndPres"
+                        app:layout_constraintStart_toStartOf="@id/glStartPres"
+                        app:layout_constraintTop_toBottomOf="@id/swFreeText" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCompounding"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/item_compounding"
+                        tools:itemCount="2"/>
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/rectangle_round_8_stroke_greylight"
+                android:paddingBottom="@dimen/_8sdp"
+                android:animateLayoutChanges="true"
+                app:layout_constraintTop_toBottomOf="@id/clPrescribe">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glStartSig"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glEndSig"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_8sdp" />
+
+                <TextView
+                    android:id="@+id/tvSig"
+                    style="@style/TextView.CardHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sig"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <FrameLayout
+                    android:id="@+id/flSigSwitch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="@id/glEndSig"
+                    app:layout_constraintStart_toStartOf="@id/glStartSig"
+                    app:layout_constraintTop_toBottomOf="@id/tvSig">
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/swSig"
+                        style="@style/CustomSwitchStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="@dimen/form_top_margin"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:text="Sig"
+                        app:switchPadding="@dimen/_12sdp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/swPRN"
+                        style="@style/CustomSwitchStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/form_top_margin"
+                        android:text="PRN"
+                        app:switchPadding="@dimen/_12sdp" />
+
+                </FrameLayout>
+
+                <com.doctor.eprescription.customviews.FormEditText
+                    android:id="@+id/fetDynamicSig"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_top_margin"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:inputType="textMultiLine"
+                    android:visibility="visible"
+                    app:formHint="Dynamic Sig"
+                    app:layout_constraintEnd_toEndOf="@id/glEndSig"
+                    app:layout_constraintStart_toStartOf="@id/glStartSig"
+                    app:layout_constraintTop_toBottomOf="@id/flSigSwitch" />
+
+                <com.doctor.eprescription.customviews.FormEditText
+                    android:id="@+id/fetDose"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_top_margin"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:inputType="number"
+                    app:formHint="Dose"
+                    app:layout_constraintEnd_toStartOf="@id/fetDoseUnit"
+                    app:layout_constraintStart_toStartOf="@id/glStartSig"
+                    app:layout_constraintTop_toBottomOf="@id/flSigSwitch" />
+
+                <com.doctor.eprescription.customviews.FormEditText
+                    android:id="@+id/fetDoseUnit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:inputType="number"
+                    app:formHint="@string/dose_quantity_unit"
+                    app:layout_constraintEnd_toEndOf="@id/glEndSig"
+                    app:layout_constraintStart_toEndOf="@id/fetDose"
+                    app:layout_constraintTop_toTopOf="@id/fetDose" />
+
+                <com.doctor.eprescription.customviews.FormEditText
+                    android:id="@+id/fetRoute"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_top_margin"
+                    android:inputType="number"
+                    app:formHint="@string/route"
+                    app:layout_constraintEnd_toEndOf="@id/glEndSig"
+                    app:layout_constraintStart_toStartOf="@id/glStartSig"
+                    app:layout_constraintTop_toBottomOf="@id/fetDose" />
+
+                <com.doctor.eprescription.customviews.FormEditText
+                    android:id="@+id/fetFrequency"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/form_top_margin"
+                    android:inputType="number"
+                    app:formHint="@string/frequency"
+                    app:layout_constraintEnd_toEndOf="@id/glEndSig"
+                    app:layout_constraintStart_toStartOf="@id/glStartSig"
+                    app:layout_constraintTop_toBottomOf="@id/fetRoute" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clDispense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@drawable/rectangle_round_8_stroke_greylight"
+                android:paddingBottom="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@id/clSig">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glStartDispense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/_8sdp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/glEndDispense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/_8sdp" />
+
+                <TextView
+                    android:id="@+id/tvDispense"
+                    style="@style/TextView.CardHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dispense"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@id/glEndDispense"
+                    app:layout_constraintStart_toStartOf="@id/glStartDispense"
+                    app:layout_constraintTop_toBottomOf="@id/tvDispense"
+                    android:orientation="vertical">
+
+                    <com.doctor.eprescription.customviews.FormEditText
+                        android:id="@+id/fetDispenseForms"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        app:formHint="@string/dispense_forms"
+                        android:layout_marginTop="@dimen/form_top_margin" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llDispense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/form_top_margin"
+                        android:orientation="horizontal">
+
+                        <com.doctor.eprescription.customviews.FormEditText
+                            android:id="@+id/fetDispenseQuantity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:inputType="numberDecimal"
+                            app:formHint="@string/quantity" />
+
+                        <Space
+                            android:layout_width="@dimen/_10sdp"
+                            android:layout_height="0dp"/>
+
+                        <com.doctor.eprescription.customviews.FormEditText
+                            android:id="@+id/fetDispenseQuantityUnit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:inputType="text"
+                            app:formHint="@string/quantity_unit"/>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <com.doctor.eprescription.customviews.FormEditText
+                        android:id="@+id/fetRefill"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        app:formHint="@string/refill"
+                        android:layout_marginTop="@dimen/form_top_margin"/>
+
+                    <com.doctor.eprescription.customviews.FormEditText
+                        android:id="@+id/fetDiagnosis"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        app:formHint="@string/diagnosis"
+                        android:layout_marginTop="@dimen/form_top_margin"/>
+
+                    <com.doctor.eprescription.customviews.FormEditText
+                        android:id="@+id/fetSpecialInstructions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        app:formHint="@string/special_instructions_for_pharmacy"
+                        android:layout_marginTop="@dimen/form_top_margin"/>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swMaySubstitute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/CustomSwitchStyle"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:text="@string/may_substitute"
+                app:layout_constraintTop_toBottomOf="@id/clDispense" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swAddToMyTemplate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/CustomSwitchStyle"
+                android:layout_marginTop="@dimen/form_top_margin"
+                android:text="@string/add_to_my_template"
+                app:layout_constraintTop_toBottomOf="@id/swMaySubstitute" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAddMore"
+            style="@style/SemiBoldStyleForButtons"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_5ssp"
+            android:layout_weight="1"
+            android:background="@drawable/red_button_bg"
+            android:text="@string/save" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:visibility="gone"
+            android:id="@+id/btnNext"
+            style="@style/SemiBoldStyleForButtons"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_weight=".5"
+            android:background="@drawable/red_border_text_bg"
+            android:text="@string/next"
+            android:textColor="@color/red" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

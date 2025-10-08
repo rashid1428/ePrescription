@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/patient_menu_graph"
+    app:startDestination="@id/patientMenuFragment">
+
+    <fragment
+        android:id="@+id/patientMenuFragment"
+        android:name="com.doctor.eprescription.features.homescreen.patientmenu.PatientMenuFragment"
+        android:label="PatientMenuFragment"
+        tools:layout="@layout/fragment_patient_menu">
+        <action
+            android:id="@+id/action_patientMenuFragment_to_prescriptionDetailFragment"
+            app:destination="@id/prescriptionDetailFragment" />
+        <action
+            android:id="@+id/action_patientMenuFragment_to_pharmacyDetailFragment"
+            app:destination="@id/pharmacyDetailFragment" />
+        <action
+            android:id="@+id/action_patientMenuFragment_to_allergiesDetailFragment"
+            app:destination="@id/allergiesDetailFragment" />
+        <action
+            android:id="@+id/action_patientMenuFragment_to_templateFragment"
+            app:destination="@id/templateFragment" />
+        <argument
+            android:name="patient"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.PatientsResponse$Patient"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_patientMenuFragment_to_erxHistoryFragment"
+            app:destination="@id/erxHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/prescriptionFragment"
+        android:name="com.doctor.eprescription.features.homescreen.prescription.createprescription.CreatePrescriptionFragment"
+        android:label="PrescriptionFragment"
+        tools:layout="@layout/fragment_create_prescription">
+        <action
+            android:id="@+id/action_prescriptionFragment_to_prescriptionDetailFragment"
+            app:destination="@id/prescriptionDetailFragment"
+            app:launchSingleTop="true" />
+        <argument
+            android:name="patient"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.PatientsResponse$Patient"
+            app:nullable="true" />
+
+        <argument
+            android:name="medicine"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.common.MedicineData"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/pharmacyDetailFragment"
+        android:name="com.doctor.eprescription.features.homescreen.pharmacy.details.PharmacyDetailFragment"
+        android:label="PharmacyFragment"
+        tools:layout="@layout/fragment_pharmacy_details">
+        <!--<action
+            android:id="@+id/action_patientMenuFragment_to_pharmacyDetailFragment"
+            app:destination="@id/pharmacyDetailFragment" />-->
+        <argument
+            android:name="pharmacy"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.Pharmacy"
+            app:nullable="true" />
+        <argument
+            android:name="patient"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.PatientsResponse$Patient"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_pharmacyDetailFragment_to_pharmacyListFragment"
+            app:destination="@id/pharmacyListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/allergiesDetailFragment"
+        android:name="com.doctor.eprescription.features.homescreen.allergies.details.AllergiesDetailFragment"
+        android:label="AllergiesDetailFragment"
+        tools:layout="@layout/fragment_allergies_details">
+        <!--<action
+            android:id="@+id/action_patientMenuFragment_to_pharmacyDetailFragment"
+            app:destination="@id/pharmacyDetailFragment" />-->
+
+        <argument
+            android:name="patient"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.PatientsResponse$Patient"
+            app:nullable="true" />
+        <argument
+            android:name="allergies"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.data.AllergiesData"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/templateFragment"
+        android:name="com.doctor.eprescription.features.homescreen.template.TemplateFragment"
+        android:label="TemplateFragment"
+        tools:layout="@layout/fragment_template">
+
+
+        <action
+            android:id="@+id/action_templateFragment_to_prescriptionFragment"
+            app:destination="@id/prescriptionFragment" />
+
+        <argument
+            android:name="patient"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.PatientsResponse$Patient"
+            app:nullable="true" />
+
+
+        <argument
+            android:name="isFromScreen"
+            android:defaultValue="1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/prescriptionDetailFragment"
+        android:name="com.doctor.eprescription.features.homescreen.prescription.details.PrescriptionDetailFragment"
+        android:label="PrescriptionDetailFragment"
+        tools:layout="@layout/fragment_prescription_details">
+
+        <action
+            android:id="@+id/action_prescriptionDetailFragment_to_prescriptionFragment"
+            app:destination="@id/prescriptionFragment"
+            app:launchSingleTop="true" />
+
+        <argument
+            android:name="patient"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.PatientsResponse$Patient"
+            app:nullable="true" />
+
+        <argument
+            android:name="medicine"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.common.MedicineData"
+            app:nullable="true" />
+        <argument
+            android:name="pharmacy"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.Pharmacy"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_prescriptionDetailFragment_to_pharmacyListFragment"
+            app:destination="@id/pharmacyListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/erxHistoryFragment"
+        android:name="com.doctor.eprescription.features.homescreen.erxstatus.ErxStatusFragment"
+        android:label="ErxHistoryFragment"
+        tools:layout="@layout/fragment_erx_status">
+        <argument
+            android:name="patient"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.PatientsResponse$Patient"
+            app:nullable="true" />
+
+        <argument
+            android:name="pharmacy"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.Pharmacy"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_erxHistoryFragment_to_erxHistoryFragment2"
+            app:destination="@id/erxHistoryFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/erxHistoryFragment2"
+        android:name="com.doctor.eprescription.features.homescreen.erxhistory.ErxHistoryFragment"
+        android:label="ErxHistoryFragment"
+        tools:layout="@layout/fragment_erx_history">
+
+        <argument
+            android:name="patient"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.PatientsResponse$Patient"
+            app:nullable="true" />
+
+        <argument
+            android:name="pharmacy"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.Pharmacy"
+            app:nullable="true" />
+        <argument
+            android:name="medicine"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.GetSessionPrescriptionResponse$Medicine"
+            app:nullable="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/pharmacyListFragment"
+        android:name="com.doctor.eprescription.features.homescreen.pharmacylist.PharmacyListFragment"
+        android:label="PharmacyListFragment"
+        tools:layout="@layout/fragment_pharmacy_list">
+        <argument
+            android:name="pharmacy"
+            app:argType="com.doctor.eprescription.data.remote.model.response.Pharmacy"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="patient"
+            android:defaultValue="@null"
+            app:argType="com.doctor.eprescription.data.remote.model.response.PatientsResponse$Patient"
+            app:nullable="true" />
+    </fragment>
+</navigation>
